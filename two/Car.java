@@ -1,7 +1,5 @@
 package two;
 
-import java.lang.reflect.Constructor;
-
 public class Car {
   String brand;
   String model;
