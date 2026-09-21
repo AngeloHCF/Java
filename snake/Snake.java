@@ -1,10 +1,20 @@
 package snake;
 
-public class Snake {
-  int x = 5;
-  int y = 5;
+import java.util.ArrayList;
 
-  void move() {
-    
+public class Snake {
+  Direction direction = Direction.RIGHT;
+  ArrayList<Position> body = new ArrayList<>();
+
+  public Snake() {
+    body.add(new Position(5, 5));
   }
+  
+  public enum Direction {
+    UP,
+    RIGHT,
+    LEFT,
+    DOWN
+  }
+
 }
