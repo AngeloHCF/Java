@@ -10,15 +10,14 @@ public class Main {
     System.out.println("x = " + x + "\ny = " + y);
     byte z = (byte) y;
     System.out.println("x = " + x + "\nz = " + z);
-    questionTwo();
+    questionTwo(keyboard);
     questionThree();
     // once you close keyboard you can't get System.in, functions go before it, e.g
     // keyboard.close() should be absolutely last
     keyboard.close();
   }
 
-  public static void questionTwo() {
-    Scanner keyboard = new Scanner(System.in);
+  public static void questionTwo(Scanner keyboard) {
     float x = keyboard.nextFloat();
     double result = x % 2.0;
     System.out.println("x = " + x + "\nresult = " + result);
