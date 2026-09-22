@@ -12,6 +12,9 @@ public class Main {
     System.out.println("x = " + x + "\nz = " + z);
     questionTwo();
     questionThree();
+    // once you close keyboard you can't get System.in, functions go before it, e.g
+    // keyboard.close() should be absolutely last
+    keyboard.close();
   }
 
   public static void questionTwo() {
@@ -21,7 +24,6 @@ public class Main {
     System.out.println("x = " + x + "\nresult = " + result);
     int z = (int) x;
     System.out.println("x = " + x + "\nz = " + z + "\nz % 2 = " + z % 2);
-    keyboard.close();
 
   }
 
