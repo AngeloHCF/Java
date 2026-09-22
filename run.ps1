@@ -1,2 +1,2 @@
-javac snake/Main.java 
-java snake.Main
+javac four/Main.java 
+java four.Main
