@@ -1,2 +1,2 @@
-javac five/Main.java 
-java five.Main
+javac six/Main.java 
+java six.Main
