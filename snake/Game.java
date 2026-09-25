@@ -11,7 +11,7 @@ public class Game extends JPanel {
   int screenWidth = columns * cellSize;
   int screenHeight = rows * cellSize;
   boolean game_running = true;
-  
+
   Snake snake = new Snake();
   Apple apple = new Apple(this);
 
@@ -22,7 +22,6 @@ public class Game extends JPanel {
     bindKey("D", "moveRight", Snake.Direction.RIGHT);
   }
 
-  
   void bindKey(String key, String actionName, Snake.Direction direction) {
     getInputMap().put(KeyStroke.getKeyStroke(key), actionName);
 
@@ -34,29 +33,28 @@ public class Game extends JPanel {
     });
   }
 
-
   @Override
   protected void paintComponent(Graphics g) {
     super.paintComponent(g);
 
     // draw rows
-    for(int i = 0; i <= rows; i++) {
+    for (int i = 0; i <= rows; i++) {
       g.drawLine(0, i * cellSize, screenWidth, i * cellSize);
     }
 
     // draw columns
-    for(int i = 0; i < columns; i++) {
+    for (int i = 0; i < columns; i++) {
       g.drawLine(i * cellSize, 0, i * cellSize, screenHeight);
     }
 
     // draw snake
     g.setColor(Color.green);
-    
-    for(Position pos : snake.body) {
+
+    for (Position pos : snake.body) {
       g.fillRect(pos.x * cellSize, pos.y * cellSize, cellSize, cellSize);
     }
   }
-  
+
   public static void startGame() {
     Game game = new Game();
 
@@ -70,36 +68,37 @@ public class Game extends JPanel {
     frame.setVisible(true);
 
     Timer timer = new Timer(200, e -> {
-      if(game.game_running) {
-        if(game.snake.direction == Snake.Direction.DOWN) {
+      if (game.game_running) {
+        if (game.snake.direction == Snake.Direction.DOWN) {
           game.snake.body.get(0).y += 1;
-        } else if(game.snake.direction == Snake.Direction.UP) {
+        } else if (game.snake.direction == Snake.Direction.UP) {
           game.snake.body.get(0).y -= 1;
-        } else if(game.snake.direction == Snake.Direction.RIGHT) {
+        } else if (game.snake.direction == Snake.Direction.RIGHT) {
           game.snake.body.get(0).x += 1;
-        } else if(game.snake.direction == Snake.Direction.LEFT) {
+        } else if (game.snake.direction == Snake.Direction.LEFT) {
           game.snake.body.get(0).x -= 1;
         }
 
-        if(game.snake.body.get(0).y >= game.rows) {
+        if (game.snake.body.get(0).y >= game.rows) {
           game.game_running = false;
-        } else if(game.snake.body.get(0).y < 0) {
+        } else if (game.snake.body.get(0).y < 0) {
           game.game_running = false;
-        } else if(game.snake.body.get(0).x >= game.columns) {
+        } else if (game.snake.body.get(0).x >= game.columns) {
           game.game_running = false;
-        } else if(game.snake.body.get(0).x < 0) {
+        } else if (game.snake.body.get(0).x < 0) {
           game.game_running = false;
         }
         Position applePosition = game.apple.generateCoords();
-        
-        if(applePosition)
-        
+        // draw apple
+        g.setColor(Color.red);
+
+        g.fillRect(applePosition.x * game.cellSize, applePosition.y * game.cellSize, game.cellSize, game.cellSize);
+
         game.repaint();
       }
     });
 
-    
     timer.start();
-    
+
   }
 }
