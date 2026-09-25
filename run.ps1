@@ -1,2 +1,2 @@
-javac five/Main.java 
-java five.Main
+javac assignment_1/Main.java 
+java assignment_1.Main
