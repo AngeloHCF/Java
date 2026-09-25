@@ -36,14 +36,15 @@ public class Main {
     } else if (age < 0) {
       System.out.println("Error: Age cannot be negative");
     }
-
+    keyboard.nextLine();
     question_two(keyboard);
     keyboard.close();
   }
   
   public static void question_two(Scanner keyboard) {
     System.out.print("Enter a sentence: ");
-    String sentence = keyboard.next();
-    System.out.println("The first word in your sentence is: " + sentence);
+    String sentence = keyboard.nextLine();
+    String first_word = sentence.substring(0, sentence.indexOf(" "));
+    System.out.println("The first word in your sentence is: " + first_word);
   }
 }
