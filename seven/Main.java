@@ -12,7 +12,7 @@ public class Main {
     keyboard.close();
   }
 
-  public static int one(Scanner keyboard) {
+  public static int one(Scanner keyboard) {x
     int n = keyboard.nextInt();
     int sum = 0;
     if (n <= 0)

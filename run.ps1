@@ -1,2 +1,2 @@
-javac seven/Main.java 
-java seven.Main
+javac eight/Main.java 
+java eight.Main
