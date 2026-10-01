@@ -1,2 +1,2 @@
-javac eight/Main.java 
-java eight.Main
+javac nine/AccountDemo.java 
+java nine.AccountDemo
