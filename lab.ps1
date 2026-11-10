@@ -1,0 +1,2 @@
+javac lab8Q3/ArrayAccessDemo.java
+java lab8Q3.ArrayAccessDemo

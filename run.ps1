@@ -1,2 +1,2 @@
-javac ten/BankAccountDemo.java 
-java ten.BankAccountDemo
+javac eleven/ExceptionDemo.java 
+java eleven.ExceptionDemo
