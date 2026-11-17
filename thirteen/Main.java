@@ -10,6 +10,8 @@ public class Main {
   private final static int width = 500;
   private final static int height = 500;
   public static void main(String[] args) {
+    Game game = new Game();
+    
     JFrame frame = new JFrame("Pong");
     
     frame.setSize(width, height);
@@ -21,11 +23,13 @@ public class Main {
     JPanel container = new JPanel(layout);
     
     container.add(new MainMenuPanel(), "menu");
-    container.add(new GamePanel(), "game");
+    container.add(new GamePanel(game), "game");
     container.add(new SettingsPanel(), "settings");
 
     frame.add(container);
 
+    layout.show(container, "game");
+    
     frame.setVisible(true);
 
   }
