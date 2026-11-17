@@ -4,3 +4,4 @@ GamePanel.java = Renders the game and handles the keyboard input
 Paddle.java = Stores paddle position, dimension and movements
 Ball.java = Stores ball position, velocity and movement
 MainMenu.java = Handles the title, play button, exit button, and menu layout
+SettingsPanel.java = Game customization options.
