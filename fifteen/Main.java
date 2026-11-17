@@ -38,6 +38,19 @@ public class Main {
     inputStream.close();
     // ===============================================================
 
+    // ===============================================================
+    // APPEND TO AN EXISTING FILE
+    PrintWriter appendText = null;
+    try {
+      appendText = new PrintWriter(new FileOutputStream(file, true));
+    } catch (FileNotFoundException e) {
+      System.out.println(e.getMessage());
+      System.exit(0);
+    }
+
+    appendText.println("Hello this is new text");
+    // ===============================================================
+
     System.exit(0);
   }
 }
