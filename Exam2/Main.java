@@ -1,29 +1,32 @@
 package Exam2;
 
-import java.util.Scanner;
+// Superclass
+class Animal {
+  void makeSound() {
+    System.out.println("Animal sound");
+  }
+}
+
+/*
+Dynamic binding is when Java determines at runtime which overriden method to execute based on the object's actual class, not the reference variable's type.
+*/
+
+// Subclass
+class Dog extends Animal {
+  @Override 
+  void makeSound() {
+    System.out.println("Woof!");
+  }
+}
 
 public class Main {
   public static void main(String[] args) {
-    Scanner keyboard = new Scanner(System.in);
-    int k = keyboard.nextInt();
-
-    double[] arr = new double[k];
-    double max = 0;
-    
-    for(int i = 0; i < k; i++) {
-      double value = keyboard.nextDouble();
-      if(value > max) max = value;
-      arr[i] = value;
-    }
-
-    double percentage = max * 0.10;
-
-    for(int i = 0; i < k; i++) {
-      if(arr[i] < percentage) {
-        System.out.println("Family " + (i + 1) + ": " + arr[i] + " makes less than " + percentage);
-      }
-    }
-
-    keyboard.close();
+    Animal a = new Dog();
+    a.makeSound();
   }
 }
+
+/*
+Animal -> Reference type
+Dog -> Actual object type (runtime type)
+*/
