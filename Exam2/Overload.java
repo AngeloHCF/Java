@@ -17,6 +17,7 @@ class Calculator {
 /*
 Java determines which method to call based on the arguments.
 Overloading: Same method name, different parameters
+New method in same class with different signature
 */
 // Overload
 
