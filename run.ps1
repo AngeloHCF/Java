@@ -1,2 +1,2 @@
-javac thirteen/Main.java 
-java thirteen.Main
+javac Exam2/Main.java 
+java Exam2.Main
