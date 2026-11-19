@@ -1,3 +1,3 @@
-javac Exam2/Main.java 
-java Exam2.Main
+javac Exam2/Overload.java 
+java Exam2.Overload
 

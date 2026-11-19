@@ -13,6 +13,7 @@ Dynamic binding is when Java determines at runtime which overriden method to exe
 
 // Subclass
 class Dog extends Animal {
+  // It tells the Java compiler to verify that you're actually overriding a method from a superclass or implementing from an interface
   @Override 
   void makeSound() {
     System.out.println("Woof!");
