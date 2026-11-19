@@ -1,3 +1,3 @@
-javac Exam2/Inheritance.java 
-java Exam2.Inheritance
+javac Exam2/ExceptionExample.java 
+java Exam2.ExceptionExample
 
