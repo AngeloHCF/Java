@@ -5,3 +5,5 @@ Paddle.java = Stores paddle position, dimension and movements
 Ball.java = Stores ball position, velocity and movement
 MainMenu.java = Handles the title, play button, exit button, and menu layout
 SettingsPanel.java = Game customization options.
+
+I want explosions
