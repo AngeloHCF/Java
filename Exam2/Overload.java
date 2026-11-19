@@ -1,5 +1,6 @@
 package Exam2;
 
+// Overload
 class Calculator {
   int add(int a, int b) {
     return a + b;
@@ -13,6 +14,11 @@ class Calculator {
     return a + b;
   }
 }
+/*
+Java determines which method to call based on the arguments.
+Overloading: Same method name, different parameters
+*/
+// Overload
 
 public class Overload {
   public static void main(String[] args) {
