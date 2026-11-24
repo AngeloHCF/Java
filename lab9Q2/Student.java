@@ -12,6 +12,7 @@ public class Student {
       System.out.print("How many lines of text do you want to append? ");
       int number = keyboard.nextInt();
       keyboard.nextLine(); // consume leftover \n
+      System.out.println("Id Name GPA");
       printWriter = new PrintWriter(new FileOutputStream(new File(fileName), true));
       while (number > 0) {
         String line = keyboard.nextLine();
