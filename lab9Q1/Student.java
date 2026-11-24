@@ -5,7 +5,6 @@ import java.io.*;
 public class Student {
   public static void main(String[] args) {
     String fileName = "students.txt";
-    PrintWriter printWriter = null;
     try {
       File f = new File(fileName);
       if (f.createNewFile()) {
