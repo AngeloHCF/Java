@@ -1,3 +1,3 @@
-javac lab9Q6/Student.java 
-java lab9Q6.Student
+javac lab9/Main.java 
+java lab9.Main
 
