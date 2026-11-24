@@ -1,7 +1,6 @@
 package lab9Q4;
 
 import java.io.*;
-import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Student {
@@ -47,7 +46,9 @@ public class Student {
 
     System.out.println("Total Number of Students: " + numberOfStudents);
     System.out.println("Average GPA: " + (gpaSum / numberOfStudents));
-    System.out.println();
+    System.out.println(
+
+    );
     System.out.println("Student with the highest GPA: ");
     System.out.println("Name: " + bestStudentName);
     System.out.println("GPA: " + bestStudentGPA);
