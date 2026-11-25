@@ -110,11 +110,23 @@ public class Main {
       System.out.println(e);
       return;
     }
-
+    
+    scanner.close();
+    
     while (scanner.hasNext()) {
       // Id, First Name, Last Name, GPA
       String[] data = scanner.nextLine().split(" ");
+      int id = Integer.parseInt(data[0]);
+      if(id == studentId) {
+        System.out.println("The user with the ID: " + id);
+        System.out.println("Name: " + data[1] + " " + data[2]);
+        System.out.println("GPA: " + data[3]);
+        return;
+      }
     }
+
+    System.out.println("That student with the ID: " + studentId + " doesn't exist");
+    
   }
 
   public static void addStudent(String[] newStudent, String fileName) {
@@ -148,7 +160,27 @@ public class Main {
       return;
     }
 
-    // logic
+    Scanner scanner = null;
+
+    try {
+      scanner = new Scanner(new File(fileName));
+    } catch(Exception e) {
+      System.out.println(e);
+      return;
+    }
+
+    scanner.close();
+
+    int i = 1;
+    while(scanner.hasNext()) {
+      String[] data = scanner.nextLine().split(" ");
+      System.out.println(i);
+      System.out.println("ID: " + data[0]);
+      System.out.println("Name " + data[1] + " " + data[2]);
+      System.out.println("GPA: " + data[3]);
+      System.out.println();
+      i += 1;
+    }
   }
 
   public static void updateStudent(int studentId, String fileName) {
