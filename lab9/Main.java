@@ -1,6 +1,7 @@
 package lab9;
 
 import java.io.*;
+import java.nio.file.*;
 import java.util.*;
 
 public class Main {
@@ -66,7 +67,11 @@ public class Main {
           fileName = keyboard.nextLine();
           System.out.print("Enter student id: ");
           studentId = keyboard.nextInt();
-          updateStudent(studentId, fileName);
+          System.out.print("Enter new student name: ");
+          newStudent[1] = keyboard.nextLine();
+          System.out.print("Enter new student GPA: ");
+          newStudent[2] = keyboard.nextLine();
+          updateStudent(studentId, newStudent, fileName);
           option = 0;
           break;
 
@@ -183,7 +188,7 @@ public class Main {
     }
   }
 
-  public static void updateStudent(int studentId, String fileName) {
+  public static void updateStudent(int studentId, String[] newStudent, String fileName) {
     System.out.println();
 
     if (!fileExist(fileName)) {
@@ -191,7 +196,19 @@ public class Main {
       return;
     }
 
-    // logic
+    Path filePath = Path.of(fileName); 
+    String newString = newStudent[0] + " " + newStudent[1] + " " + newStudent[2];
+    String studentIdString = String.valueOf(studentId);
+    
+    try {
+      String content = Files.readString(filePath);
+      content = content.replace(studentIdString, newString);
+      Files.writeString(filePath, content);
+    } catch(Exception e) {
+      System.out.println(e);
+      return;
+    }
+    System.out.println("Successfully updated student with the ID: " + studentId);
   }
 
   public static void deleteStudent(int studentId, String fileName) {
@@ -202,7 +219,23 @@ public class Main {
       return;
     }
 
-    // logic
+    Scanner scanner = null;
+
+    try {
+      scanner = new Scanner(new File(fileName));
+    } catch (Exception e) {
+      System.out.println(e);
+      return;
+    }
+
+    String[] data;
+    
+    while(scanner.hasNext()) {
+      data = scanner.nextLine().split(" ");
+      if(Integer.parseInt(data[0]) != studentId) continue;
+      
+    }
+    
   }
 
   public static boolean fileExist(String fileName) {
